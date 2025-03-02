@@ -1,0 +1,1 @@
+Stands is a repository with small web demos created for learning and experimenting with HTML, CSS, and JavaScript. It contains interactive examples that can be used in your projects or for educational purposes.
