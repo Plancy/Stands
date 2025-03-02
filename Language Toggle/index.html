@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch language</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="text" data-lang="ru">Привет, мир!</h1>
+    <button id="toggle-btn" data-lang="ru">Переключить на английский</button>
+
+    <script>
+        const translations = {
+            en: "Hello, world!",
+            ru: "Привет, мир!"
+        };
+        
+        const buttonTexts = {
+            ru: "Переключить на английский",
+            en: "Switch to Russian"
+        };
+        
+        document.getElementById("toggle-btn").addEventListener("click", () => {
+            const textElement = document.getElementById("text");
+            const buttonElement = document.getElementById("toggle-btn");
+            const currentLang = textElement.getAttribute("data-lang");
+            const newLang = currentLang === "ru" ? "en" : "ru";
+            
+            textElement.textContent = translations[newLang];
+            textElement.setAttribute("data-lang", newLang);
+            
+            buttonElement.textContent = buttonTexts[newLang];
+            buttonElement.setAttribute("data-lang", newLang);
+        });
+    </script>
+</body>
+</html>
